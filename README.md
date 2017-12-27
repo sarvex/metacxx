@@ -9,7 +9,7 @@ First, create a text file entitled hello_world.mcx containing the following code
 #include <iostream>
 
 int main()
-	td::cout << "Hello, world!\n";
+	std::cout << "Hello, world!\n";
 	return 0;
 ```
 Then transform it with this command:
