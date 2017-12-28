@@ -21,5 +21,19 @@ Then you can compile it and execute it as you would do for a regular C++ applica
 g++ hello_world.cpp
 ./a.out
 ```
+## How do I install it ?
+First, clone this repository:
+```
+git clone https://github.com/josephscade/metacxx.git
+```
+Then compile and install it with this command:
+```
+make && sudo make install
+```
+## Uninstallation:
+Simply run this command when you are in the clonned repository folder:
+```
+sudo make uninstall
+```
 ## About this software
 Keep in mind this software is still in developpment, so except bugs.
