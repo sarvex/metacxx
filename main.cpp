@@ -17,14 +17,23 @@ int get_indent_level (string line)
 
 int main (int argc, char** argv)
 {
-	if (argc < 3)
+	if (argc < 2)
 	{
 		printf("Not enough args\n");
 	}
 	else
 	{
-		char* file_name = argv[1];
-		ifstream input_file(file_name);
+		string output_file_name;
+		if (argc == 2)
+		{
+			output_file_name = argv[2];
+		}
+		else
+		{
+			output_file_name = "output.cpp";
+		}
+		char* input_file_name = argv[1];
+		ifstream input_file(input_file_name);
 		ofstream output_file(argv[2]);
 		int bracket_inside = 0;
 		if (input_file.is_open() && output_file.is_open())
@@ -58,7 +67,7 @@ int main (int argc, char** argv)
 						add_char = "{\n";
 						bracket_indent = indent_level - 1;
 						indent_add = 1;
-						if (last_indent_level - indent_level > 0)
+						if (indent_a - indent_b > 0)
 						{
 							printf("Error : indentation is strange\n");
 						}
@@ -66,17 +75,13 @@ int main (int argc, char** argv)
 					}
 					for (int i = indent_b; i > indent_a; i --)
 					{
-						for (int j = 0; j < bracket_indent; j ++)
-						{
-							output_file << "\t";
-						}
 						output_file << add_char;
 					}
 				}
 				output_file << line << "\n";
 				last_indent_level = indent_level;
 			}
-			for (int i = 0; i < bracket_inside; i ++)
+			for (int i = 0; i < bracket_inside - 1; i ++)
 			{
 				output_file << "}\n";
 			}
