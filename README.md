@@ -9,8 +9,8 @@ A C++ preprocessor created in order to simplify C++ programming.
 1. [How do I install it ?](#install)
 1. [Uninstallation](#uninstall)
 1. [About this software](#about)
-## What is it?
-<a name="whatis"></a>
+<a name="whatis">
+</a>## What is it?
 This aims to make easier C++ programming. It is a program which converts code to c++.
 <a name="differences"></a>
 ### Differences between metacxx language and C++
